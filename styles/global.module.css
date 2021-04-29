@@ -1,0 +1,138 @@
+/* Container for whole page */
+.container
+{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: ghostwhite;
+    height: 100%;
+    margin: 2%;
+    
+}
+
+/* Title for Page */
+.h1
+{
+    flex: 1;
+    align-self: center;
+    margin: 1%;
+    text-align: center;
+}
+
+/* Navigation Bar */
+.navBar
+{
+    display: flex;
+    flex: 2;
+    background-color:white;
+}
+
+/* Navbar Links */
+.navBarLink
+{
+    flex: 1;
+    text-decoration: none;
+    font-weight: bolder;
+    color: gray;
+    font-size: large;
+    padding: 1%;
+    text-align: center;
+    
+}
+
+/* Active Page link */
+.active
+{
+    background-color: #1C86EE;
+    color: white;
+}
+
+/* Hovered Page Link */
+.navBarLink:hover
+{
+    color: black;
+}
+
+/* General Button styling */
+.button
+{
+    height: 8%;
+    align-self: center;
+    width: 20%;
+    font-weight: bold;
+    color: white;
+    background-color:  #1C86EE;
+    padding: 0.5%;
+    border-radius: 5px;
+    border: none;
+}
+
+.h2
+{
+    flex: 2;
+    margin: 1%;
+    text-align: center;
+}
+
+.codeInput
+{
+    flex: 8;
+    height: 100%;
+    margin: 10%;
+    background: url(http://i.imgur.com/2cOaJ.png) top -12px left / auto no-repeat, 
+              linear-gradient(#F1F1F1 50%, #F9F9F9 50%) top left / 100% 32px;
+    line-height: 16px;
+    padding-left: 30px;
+}
+
+/*Table Position */
+.tablePosition
+{
+    flex: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.table
+{
+    align-content: center;
+    background-color: black;
+    width:100%;
+}
+.tableHeaderText
+{
+    color: white;
+    padding: 1%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.tableHeaderRow
+{
+    background-color: #1C86EE;
+
+}
+
+.tableRow
+{
+    border: black 2px solid;
+    background-color: ghostwhite;
+}
+
+/* Table Cell */
+
+.tableCell
+{
+    text-align: center;
+    padding: 1%;
+}
+
+.loading
+{
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+}
