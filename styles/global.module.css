@@ -6,9 +6,8 @@
     flex: 1;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: ghostwhite;
-    height: 100%;
     margin: 2%;
-    
+    justify-content: space-between;
 }
 
 /* Title for Page */
@@ -75,64 +74,8 @@
     text-align: center;
 }
 
-.codeInput
-{
-    flex: 8;
-    height: 100%;
-    margin: 10%;
-    background: url(http://i.imgur.com/2cOaJ.png) top -12px left / auto no-repeat, 
-              linear-gradient(#F1F1F1 50%, #F9F9F9 50%) top left / 100% 32px;
-    line-height: 16px;
-    padding-left: 30px;
-}
 
-/*Table Position */
-.tablePosition
+.footer
 {
-    flex: 10;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-}
-
-.table
-{
-    align-content: center;
-    background-color: black;
-    width:100%;
-}
-.tableHeaderText
-{
-    color: white;
-    padding: 1%;
-    font-weight: bold;
-    text-align: center;
-}
-
-.tableHeaderRow
-{
-    background-color: #1C86EE;
-
-}
-
-.tableRow
-{
-    border: black 2px solid;
-    background-color: ghostwhite;
-}
-
-/* Table Cell */
-
-.tableCell
-{
-    text-align: center;
-    padding: 1%;
-}
-
-.loading
-{
-    text-align: center;
-    justify-self: center;
-    align-self: center;
+    justify-self: flex-end;
 }

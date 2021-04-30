@@ -19,3 +19,7 @@ export default (req, res) => {
 
   res.status(200).json({ name: 'John Doe' })
 }
+
+
+
+//Use mongoDb to connect to the database

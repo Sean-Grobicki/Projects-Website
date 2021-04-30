@@ -1,0 +1,42 @@
+.about
+{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    margin: 5%;
+    border:solid 2px #3066BE;
+    width: 70%;
+    align-self: center;
+    border-radius: 5px;
+}
+
+.h3
+{
+    flex: 2;
+    margin: 1%;
+    text-align: center;
+}
+
+.viewerDiv
+{
+    height: 100%;
+    width: 70%;
+    align-self: center;
+}
+
+.eachSlide div
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 500px;
+}
+
+.eachSlide span
+{
+    padding: 20px;
+    font-size: 20px;
+    background: #efefef;
+    text-align: top;
+}
