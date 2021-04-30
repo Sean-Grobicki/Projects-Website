@@ -1,10 +1,23 @@
 import Head from 'next/head'
 import global from '../styles/global.module.css'
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
 export default function Projects() {
+    const [type,setType] = useState("All");
+    const [language,setLanguage] = useState("All");
+    const types = ["All","Education","Personal"];
+    const languages = ["All","C#", "Java", "JavaScript", "Other"];
+    const defaultType = types[0];
+    const defaultLanguage = languages[0];
 
-  return (
+    const getProjects = () =>
+    {
+        // Make API call to /api/projects
+    }
+
+    return (
     <div className={global.container}>
       <Head>
         <meta charSet = "utf-8"/>
@@ -19,6 +32,8 @@ export default function Projects() {
         <a href = "cv" className={global.navBarLink}>CV</a>
       </nav>
       <h2 className={global.h2}> My Projects </h2>
+      <Dropdown options={types} value={defaultType} onChange={(eve) => setType(eve.value)} />
+      <Dropdown options={languages} value={defaultLanguage} onChange={(eve) => setLanguage(eve.value)}/>
       <footer>
           <h3>Contact Me</h3>
           <p>
