@@ -13,14 +13,6 @@ export default (req, res) => {
       // Send JSON if successful
   
     }
-    else if(req.method === 'POST')
-    {
-      // Use body to convert into SQL query
-
-      // Send query to database
-
-      // Send a 201 if created
-    }
     else if(req.method === 'PATCH')
     {
       // Use parameter in URL to help query

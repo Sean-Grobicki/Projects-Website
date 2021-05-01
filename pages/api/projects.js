@@ -5,7 +5,6 @@ export default async(req, res) => {
 
   if(req.method === 'GET')
   {
-    // Sort out the query parameters
     const queryParams = req.query;
     const query = formatQuery(queryParams);
     const number = getNumber(queryParams);
@@ -50,8 +49,6 @@ function getOffset(queryParams)
   return offset;
 }
 
-
-
 const { MongoClient } = require("mongodb");
 const uri = encodeURI("mongodb+srv://sg242:root@portfolio.89the.mongodb.net/projects?retryWrites=true&w=majority");
 const client = new MongoClient(uri,{ useUnifiedTopology: true}, { useNewUrlParser: true },{ connectTimeoutMS: 30000 }, { keepAlive: 1});
@@ -76,6 +73,7 @@ async function getProjects(query,number,offset)
       })
       projectList[index].links = linkList;
     }
+    // Add code to get the number and offset paramaters to work.
     return projectList;
   }
   catch(err)

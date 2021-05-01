@@ -4,19 +4,56 @@ import {useState,useEffect} from 'react';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
-export default function Projects() {
+const fetcher = (url) => fetch(url).then((res) => res.json())
+
+export default function Projects() 
+{
+    const [projects, setProjects] = useState([]);
     const [type,setType] = useState("All");
     const [language,setLanguage] = useState("All");
-    const types = ["All","Education","Personal"];
-    const languages = ["All","C#", "Java", "JavaScript", "Other"];
+    
+    const types = ["All","edu","pers"];
+    const languages = ["All","cs", "java", "js", "oth"];
     const defaultType = types[0];
     const defaultLanguage = languages[0];
 
-    const getProjects = () =>
+    useEffect( ()=>{
+      updateProjects(type,language);
+      },[])
+    
+    const updateType = (value) =>
     {
-        // Make API call to /api/projects
+      setType(value);
+      updateProjects(value,language);
     }
 
+    const updateLanguage = (value) =>
+    {
+      setLanguage(value);
+      updateProjects(type,value);
+    } 
+
+    const updateProjects = async (typ,lan) =>
+    {
+      var route = '/api/projects';
+      var seperator = "?";
+      if(typ !== "All")
+      {
+        route += seperator+"type="+typ;
+        seperator = "&";
+      }
+      if(lan !== "All")
+      {
+        route += seperator+"lan="+lan;
+      }
+      const response = await fetcher(route);
+      setProjects(response);
+    }
+
+    if(projects === [])
+    {
+      return 
+    }
     return (
     <div className={global.container}>
       <Head>
@@ -32,8 +69,9 @@ export default function Projects() {
         <a href = "cv" className={global.navBarLink}>CV</a>
       </nav>
       <h2 className={global.h2}> My Projects </h2>
-      <Dropdown options={types} value={defaultType} onChange={(eve) => setType(eve.value)} />
-      <Dropdown options={languages} value={defaultLanguage} onChange={(eve) => setLanguage(eve.value)}/>
+      <Dropdown options={types} value={defaultType} onChange={(eve) => updateType(eve.value)} />
+      <Dropdown options={languages} value={defaultLanguage} onChange={(eve) => updateLanguage(eve.value)}/>
+      {projects.map((pr) => <Project project={pr}/>)}
       <footer>
           <h3>Contact Me</h3>
           <p>
@@ -43,4 +81,15 @@ export default function Projects() {
         </footer>
     </div>
   )
+}
+
+function Project(props)
+{
+   return(
+   <div> 
+     <p>Name: {props.project.title}</p>
+     <p>Type: {props.project.type}</p>
+     <p>Language:{props.project.language}</p> 
+     <p>Description:{props.project.description}</p>
+   </div>);
 }
