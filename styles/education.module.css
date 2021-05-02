@@ -1,0 +1,61 @@
+.filterDiv
+{
+    background-color: white;
+    padding: 1%;
+    margin: 2%;
+    border:solid 2px #afafaf;
+    align-self: center;
+    border-radius: 2px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.filterText
+{
+    margin: 2%;
+    font-weight: bold;
+}
+
+.educationDiv
+{
+    background-color: white;
+    padding: 1%;
+    margin: 2%;
+    border:solid 2px #afafaf;
+    align-self: center;
+    border-radius: 2px;
+}
+
+.educationTitle
+{
+    text-align: center;
+}
+
+.tableDiv
+{
+    width: 50%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.overviewDiv
+{
+    width: 50%;
+}
+
+.splitDiv
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tableCells
+{
+    border:solid 2px #afafaf;
+	padding: 5px 35px;
+}

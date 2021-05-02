@@ -6,10 +6,13 @@ export default async(req, res) => {
   if(req.method === 'GET')
   {
     const queryParams = req.query;
-    const query = formatQuery(queryParams);
+    if(queryParams.language === 'C')
+    {
+        queryParams.language = 'C#';
+    }
     const number = getNumber(queryParams);
     const offset = getOffset(queryParams);
-    const projects = await getProjects(query,number,offset);
+    const projects = await getProjects(queryParams,number,offset);
     res.status(200).json(projects);
   }
 }
