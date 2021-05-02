@@ -20,7 +20,9 @@ export default function Home() {
 	      <title> Sean Grobicki's Portfolio</title> 
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className={global.h1}>Sean Grobicki Portfolio</h1>
+      <div className={global.headerDiv}>
+        <h1 className={global.h1}>Sean Grobicki Portfolio</h1>
+      </div>
       <nav className = {global.navBar}> 
         <a href = "" className={global.active + ' '+ global.navBarLink}>Home</a>
         <a href = "projects" className={global.navBarLink}>Projects</a>
@@ -55,21 +57,19 @@ export default function Home() {
         </div>
         <article className ={styles.about}>
                 <h3 className={styles.h3}>About Me</h3>
-                <p>Full Name: Sean Grobicki </p>
-                <p>DOB: 18/02/2000 </p>
-                <p>Nationality: British </p>
-                <p>Place of Study: <a href = "https://www2.mmu.ac.uk/" title="Home Page of Manchester Metropolitan University" >Manchester Metropolitan University</a> </p>
-                <p>Email: seangrobicki@gmail.com</p>
-                <p> Tel: 07477823223 (mobile) </p>
-                <p> My name is Sean and I'm a 20 year old who lives in Burnage, Manchester. Hobbies that i enjoy include playing video games and playing or watching football. I really enjoy problem solving and is one of the main reasons I enjoy studying this course so much. The feeling you get when a problem is solved and looking back at a project that’s took weeks or months to develop and see the final product is very satisfying and motivates me to develop my skills and study harder. Programming languages that I've studied include C#, Java, C++, Javascript and PHP.</p>
+                <p className={styles.aboutText}>Full Name: Sean Grobicki </p>
+                <p className={styles.aboutText}>DOB: 18/02/2000 </p>
+                <p className={styles.aboutText}>Nationality: British </p>
+                <p className={styles.aboutText}>Place of Study: <a href = "https://www2.mmu.ac.uk/" title="Home Page of Manchester Metropolitan University" >Manchester Metropolitan University</a> </p>
+                <p className={styles.aboutText}>Email: seangrobicki@gmail.com</p>
+                <p className={styles.aboutText}>Mobile: 07477823223 </p>
+                <p className={styles.aboutText}> My name is Sean and I am a graduate Computer Science student from Manchester Metropolitan University. I am very enthusiastic  about  programming  and  enjoy thinking logically, working  through problems, and finding effective solutions. I consider myself to have excellent technical abilities for this stage of my career in languages such as C#, Java, and JavaScript. During my studies I’ve advanced my project development skills using techniques like agile scrum and Kanban. I also have experience using version control software like GitHub and have worked on projects using technologies such as React, Android Studio and Express. I am looking for a career opportunity as a software developer in a forward thinking, industry leading organisation.  I would  like  to  have  a  high  level  of  responsibility  whilst  also  working  in  a  team environment on a variety of projects in different programming languages. </p>
         </article>
 
-        <footer>
-          <h3>Contact Me</h3>
-          <p>
-            Email: seangrobicki@gmail.com
-            Phone: 07477823223
-          </p>  
+        <footer className={global.footer}>
+          <h3 className={global.footerTitle}>Contact Me</h3>
+            <p className={global.footerEmail}>Email: seangrobicki@gmail.com </p>
+            <p className={global.footerMobile}>Mobile: 07477823223 </p>
         </footer>
     </div>
   )

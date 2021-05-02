@@ -2,12 +2,20 @@
 {
     display: flex;
     flex-direction: column;
-    padding: 2%;
+    padding: 1%;
     margin: 5%;
-    border:solid 2px #3066BE;
+    border:solid 2px #afafaf;
     width: 70%;
     align-self: center;
-    border-radius: 5px;
+    border-radius: 2px;
+    background-color: white;
+}
+
+.aboutText
+{
+    margin: 1%;
+    padding: 0%;
+    font-weight:bold;
 }
 
 .h3
@@ -27,16 +35,22 @@
 .eachSlide div
 {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     background-size: cover;
     height: 500px;
+    border-radius: 2px;
+    border: solid 2px #afafaf;
 }
 
 .eachSlide span
 {
-    padding: 20px;
+    padding: 10px;
     font-size: 20px;
-    background: #efefef;
-    text-align: top;
+    background: #afafaf;
+    color: white;
+    font-weight: bolder;
+    
 }
+
+/*1C86EE*/

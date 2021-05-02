@@ -17,7 +17,9 @@ export default function Education() {
 	      <title> Sean Grobicki's Portfolio</title> 
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className={global.h1}>Sean Grobicki Portfolio</h1>
+      <div className={global.headerDiv}>
+        <h1 className={global.h1}>Sean Grobicki Portfolio</h1>
+      </div>
       <nav className = {global.navBar}> 
         <a href = "../" className={ global.navBarLink}>Home</a>
         <a href = "projects" className={global.navBarLink}>Projects</a>
@@ -27,12 +29,10 @@ export default function Education() {
       <h2 className={global.h2}> Education </h2>
       <Dropdown options={options} onChange={(eve) => setChoice(eve.value)} value={defaultOption}/>
       <EducationChoices choice={choice}/>
-      <footer>
-          <h3>Contact Me</h3>
-          <p>
-            Email: seangrobicki@gmail.com
-            Phone: 07477823223
-          </p>  
+      <footer className={global.footer}>
+          <h3 className={global.footerTitle}>Contact Me</h3>
+            <p className={global.footerEmail}>Email: seangrobicki@gmail.com </p>
+            <p className={global.footerMobile}>Mobile: 07477823223 </p>
         </footer>
     </div>
   )

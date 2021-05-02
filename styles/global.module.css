@@ -5,9 +5,14 @@
     flex-direction: column;
     flex: 1;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: ghostwhite;
-    margin: 2%;
-    justify-content: space-between;
+    background-color: whitesmoke;
+    margin-top: 1%;
+    border-radius: 5px;
+}
+
+.headerDiv
+{
+    background-color: #afafaf ;
 }
 
 /* Title for Page */
@@ -15,8 +20,9 @@
 {
     flex: 1;
     align-self: center;
-    margin: 1%;
+    margin: 0.5%;
     text-align: center;
+    color: white;
 }
 
 /* Navigation Bar */
@@ -37,36 +43,26 @@
     font-size: large;
     padding: 1%;
     text-align: center;
+    margin: 0%;
     
 }
 
 /* Active Page link */
 .active
 {
-    background-color: #1C86EE;
+    background-color: #afafaf;
     color: white;
+    margin: 0%;
 }
 
 /* Hovered Page Link */
 .navBarLink:hover
 {
     color: black;
+    background-color: white;
 }
 
 /* General Button styling */
-.button
-{
-    height: 8%;
-    align-self: center;
-    width: 20%;
-    font-weight: bold;
-    color: white;
-    background-color:  #1C86EE;
-    padding: 0.5%;
-    border-radius: 5px;
-    border: none;
-}
-
 .h2
 {
     flex: 2;
@@ -77,5 +73,40 @@
 
 .footer
 {
+    display: flex;
+    flex-direction: column;
     justify-self: flex-end;
+    align-items: flex-start;
+    padding: 1%;
+    padding-left: 2%;
+    background-color: #afafaf;
+    border-top: solid 5px black;
+
+}
+
+.footerEmail
+{   
+    font-size: medium;
+    font-weight: bold;
+    padding: 0%;
+    margin:0%;
+    margin-bottom: 0.5%;
+    color: black;
+}
+
+.footerTitle
+{
+    padding: 0%;
+    margin:0%;
+    margin-bottom: 1%;
+    color: black;
+}
+
+.footerMobile
+{
+    font-size: medium;
+    font-weight: bold;
+    padding: 0%;
+    margin:0%;
+    color: black;
 }
