@@ -51,10 +51,13 @@ export default function Projects()
       {
         route += seperator+"language="+lan;
       }
-      console.log(route);
       const response = await fetcher(route);
-      setProjects(response);
-      setLoaded(true);
+      console.log(response);
+      if(response !== undefined)
+      {
+        setProjects(response);
+        setLoaded(true);
+      }
     }
     if(!loaded)
     {
