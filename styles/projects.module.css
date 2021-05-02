@@ -3,39 +3,24 @@
     background-color: white;
     padding: 1%;
     margin: 2%;
-    border:solid 2px #afafaf;
+    border:solid 2px white;
     align-self: center;
     border-radius: 2px;
 
 }
 
-.projectText
-{
-
-}
 
 .projectsBody
 {
     display: flex;
     flex-direction: column;
     width: 80%;
-    background-color: white;
+    background-color: #afafaf;
     padding: 1%;
     margin: 2%;
     border:solid 2px #afafaf;
     align-self: center;
     border-radius: 2px;
-}
-
-.projectsList
-{
-    background-color: white;
-    padding: 1%;
-    margin: 2%;
-    border:solid 2px #afafaf;
-    align-self: center;
-    border-radius: 2px;
-    align-self: flex-start;
 }
 
 .halfDiv
@@ -69,3 +54,29 @@
     flex-direction: column;
 
 }
+
+.linkText
+{
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    text-decoration: underline;
+    font-weight: bolder;
+    width: 15%;
+    margin-top:1%;
+}
+
+.linkDiv
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.loadingTitle
+{
+    text-align: center;
+    margin: 1%;
+    color: white;
+}
+
+
