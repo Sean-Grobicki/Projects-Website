@@ -198,7 +198,7 @@ function Link(props)
   }
   else if(props.link.type === "GitHub")
   {
-    imageLink = '/images/github.png';
+    imageLink = '/images/gitHub.png';
   }
   else
   {

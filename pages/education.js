@@ -76,13 +76,13 @@ function University1()
             <div className={styles.splitDiv}>
                 <article className = {styles.overviewDiv}>
                     <h3> Computer Systems Fundamentals </h3>
-                    <p>For the first part of this unit it was split between learning logic circuits and the mathematics behind computing such as graphs and matrices. The in the second half of this unit we learnt about Assembly language making some simple programs using assembly.</p>
+                    <p>For the first part of this unit it was split between learning logic circuits and the mathematics behind computing such as graphs and matrices. In the second half of this unit we learnt about Assembly language making some simple programs and learning the basics.</p>
                     <h3> Information Systems </h3>
-                    <p>During this unit we undertook a project that would implement a relational database using a case study. Through this we learnt normalisation, use case studies and ERD’s which helped us to design the database and then used oracle to implement and SQL to query the system.</p>
+                    <p>During this unit we undertook a project that would implement a relational database using a case study. Through this we learnt normalisation, use case diagrams and ERD’s which helped us to design the database and then used oracle to implement it and then SQL to query the system.</p>
                     <h3> Introduction to Web Design and Development </h3>
                     <p>The first half of this unit consisted of HTML, CSS and JavaScript to help us develop an interactive website with customised video controls. The second half of this unit we learnt how to use php to do data processing through websites.</p>
                     <h3> Programming </h3>
-                    <p>During this unit we learnt the fundamentals of programming mainly using Java. We first used the more graphical IDE processing to see the output better then moved to using Eclipse to learn object orientated programming in more detail.</p>
+                    <p>During this unit we learnt the fundamentals of programming mainly using Java. We first used the more graphical IDE processing to see the learn the basics then moved on to using Eclipse to learn object orientated programming in more detail.</p>
                 </article>
                 
                 <article className = {styles.tableDiv}>
@@ -123,13 +123,13 @@ function University2()
         <div className={styles.splitDiv}>
             <article className={styles.overviewDiv}>
                 <h3> Advanced Programming </h3>
-                <p>In Advanced Programming we expanded from programming last year still using Java. One of our assignments was to create a <a href = "../Projects/allProjects.php?language=all&type=all&search=scheduler">scheduler</a> which is shown in the projects. Another assignment was to create an <a href = "../Projects/allProjects.php?language=all&type=all&search=android mapping assignment">android app</a> within a day which would map the locations of train stations. </p>
+                <p>In Advanced Programming we expanded from programming last year while still using Java. One of our assignments was to create a scheduler which is shown in the projects. Another assignment was to create an android app within a day which would map the locations of train stations. </p>
                 <h3> Algorithms and Data Structures </h3>
-                <p>Algorithms and Data Structures consisted of implementing different data structures and algorithms using C#. We implemented Graphs and Trees and methods which would manipulate these data structures. The final assignment was to create a desktop application which was a <a href = "../Projects/allProjects.php?language=all&type=all&search=word processing application">word processing application</a> which implemented the text in a tree structure to be able to give information about each word.</p>
+                <p>Algorithms and Data Structures consisted of implementing different data structures and algorithms using C#. We implemented Graphs, Trees and methods which would manipulate these data structures. The final assignment was to create a desktop application which was a word processing application which stored the text in a tree structure to be able to give information about each word.</p>
                 <h3> Computer Networks and Operating Systems </h3>
                 <p>In this unit the first half consisted of learning how to configure the different components in a network such a routers, switches, and machines. The second half of this unit was studying operating systems learning how to do bash scripting in Linux and understanding the file systems.</p>
                 <h3> Professional Development </h3>
-                <p>This unit’s main component was a group project where we had the brief of creating a POS system which we did in C# which was compatible with a barcode scanner. Another part of the unit was to attend extracurricular activities related to the computing industry which I mainly chose to attend talks on topics I was interested in such as researching the games industry.</p>
+                <p>This unit’s main component was a group project where we had the brief of creating a POS system, which we did in C#, which was compatible with a barcode scanner. Another part of the unit was to attend extracurricular activities related to the computing industry which I mainly chose to attend talks on topics I was interested in such as researching the games industry.</p>
             </article>
             
             <article className ={styles.tableDiv}>
@@ -169,13 +169,13 @@ function University3()
         <div className={styles.splitDiv}>
                 <article className={styles.overviewDiv}>
                     <h3> Artificial Intelligence </h3>
-                    <p>Yet to Study.</p>
+                    <p>In this unit we studied the basics of MatLab to help us manipulate data and find trends in topics. An example we looked a throughout the unit was a biopsies data set to help determine if a tumor was malignant or benign. We studied k-nearest neighbours, naive bayes and decision trees to help interpret the data.</p>
                     <h3> Mobile Applications Development</h3>
-                    <p>Yet to Study.</p>
+                    <p>Throughout this unit we studied React-Native to help us build a mobile app which wuld interact with a backend API that was already created. We also learnt industry practices such as version control, testing and lintrs and were encouraged to use these throughout the project.</p>
                     <h3> Programming Languages Principles and Design </h3>
-                    <p>During this unit so far, we have studied the different types of programming languages and paradigms. Languages studied include Python, C, C++, Haskell and Prolog to give us an idea of the different types of languages. We have also studied how different languages compilers and interpreters work as well.</p>
+                    <p>During this unit, we studied the different types of programming languages and paradigms. Languages studied include Python, C, C++, Haskell and Prolog to give us an idea of the different types of languages. In the second half of the unit we studied compilers and went through the steps to create our own compiler for a simple C like language.</p>
                     <h3> Project </h3>
-                    <p>My project is to design a program which will automatically generate test programming questions for students learning to program which will be able to automatically generate feedback and the answer for the user. As of this moment I am yet to start the implementation and am working on the design and research needed.</p>
+                    <p>My project was to design a program which would automatically generate test programming questions for students learning to program which would be able to automatically generate feedback and the answer for the user. This included creating a backend server to generate the questions and a front end for the user to interact with which were created with express and Next.js respectively. </p>
                 </article>
             
                 <article className={styles.tableDiv}>
@@ -215,13 +215,13 @@ function College()
             <div className={styles.splitDiv}>
                 <article className={styles.overviewDiv}>
                     <h3> Overview</h3>
-                    <p>I studied for my A-Level’s at Aquinas College Stockport for a period of 2 years. The A-Level’s I chose were History, Computer Science and Maths. This was due to them being my favourite subjects at high school. I had the option to choose a fourth subject but opted against this due to not having any passion for any other subjects.</p>
+                    <p>I studied for my A-Level’s at Aquinas College Stockport for a period of 2 years. The A-Level’s I chose were History, Computer Science and Maths. This was due to them being my favourite subjects at high school. I had the option to choose a fourth subject but opted against this due to not having enough interest in another subject.</p>
                     <h3> Maths </h3>
-                    <p>During the first year we were preparing for AS level where we studied the core Units  C1 and C2 as well as Decision maths which was heavily based on topics I had covered in Computer Science. The Second year we had the core units of C3 and C4 as well as Mechanics which was interesting as I hadn’t studied this before. </p>
+                    <p>During the first year we were preparing for AS level where we studied the core Units C1 and C2 as well as Decision maths which was heavily based on topics I had covered in Computer Science. The Second year we had the core units of C3 and C4 as well as Mechanics which was interesting as I hadn’t studied this before. In thecore units we studied subjects such as integration, differentiation and graphs </p>
                     <h3> Computer Science </h3>
-                    <p>During the first year we focused on procedural programming and covered many more theory based topics such as Graphs, the fetch execute cycle and assembly language. The second year we learnt object orientated programming as well as some functional programming. We also had to make an end of year project which was for me a <a href = "../Projects/allProjects.php?language=all&type=all&search=connect 4"> Connect 4 Game</a>.</p>
+                    <p>During the first year we focused on procedural programming and covered many more theory based topics such as Graphs, the fetch execute cycle and assembly language. The second year we learnt object orientated programming as well as some functional programming. We also had to make an end of year project which was for me a Connect 4 Game which can be seen in the projects section.</p>
                     <h3> History </h3>
-                    <p>History was the modern history option in which the 3 main topic we covered was Tsarist and Communist Russia 1864-1964, The causes of the French Revolution 1689-1789 and Modern Britain 1952 – 2007. I found the most interesting of these was the Russia topic seeing how much a country changed in around 100 years. </p>
+                    <p>The history I chose was the modern history option in which the 3 main topics we covered were Tsarist and Communist Russia 1864-1964, The causes of the French Revolution 1689-1789 and Modern Britain 1952 – 2007. I found the most interesting of these was the Russia topic seeing how much a country changed in only 100 years. </p>
                 </article>
             
                 <article className={styles.tableDiv}>
@@ -267,7 +267,7 @@ function School()
             <div className={styles.splitDiv}>
                 <article className ={styles.overviewDiv}>
                     <h3 className={styles.educationTitle}> Overview</h3>
-                    <p>I studied for my GCSE's at The Barlow RC High School in Didsbury. The mandatory subjects that we had to take were Maths, English, Science and Religion. English was split up into literature and language and you had the choice between core & additional science or choosing to do triple science which was Biology, Chemistry and Physics which was what I chose. My 3 options subjects were Business Studies, Computer Science and History. Computer Science was chosen as when we had the talk on it and tried some examples it seemed interesting. History was chosen as I am really interested in History and enjoyed reading up on it in my own time anyway. Business Studies was chosen as we had limited option blocks and that was what I thought the best of my options. My favourite subjects during this time were History, Computer Science and Maths as I enjoyed the problem-solving elements of the last two and enjoyed what we were learning in History.</p>
+                    <p>I studied for my GCSE's at The Barlow RC High School in Didsbury. The mandatory subjects that we had to take were Maths, English, Science and Religion. English was split up into literature and language and you had the choice between core and additional science or choosing to do triple science which was Biology, Chemistry and Physics which was what I chose. My 3 options subjects were Business Studies, Computer Science and History. Computer Science was chosen as when we had the talk on it and tried some examples it seemed interesting. History was chosen as I am really interested in History and enjoyed reading up on it in my own time anyway. Business Studies was chosen as we had limited option blocks and that was what I thought the best of my options. My favourite subjects during this time were History, Computer Science and Maths as I enjoyed the problem-solving elements of the last two and enjoyed the different topics we learnt in History.</p>
                 </article>
 
                 <article className={styles.tableDiv}>
