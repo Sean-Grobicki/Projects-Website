@@ -24,10 +24,10 @@ export default function Projects() {
         <a href = "cv" className={global.active + ' '+ global.navBarLink}>CV</a>
       </nav>
       <h2 className={global.h2}> My CV </h2>
-      <Document file={'/CV Sean Grobicki.pdf'} className={styles.document}>
-        <Page pageNumber={1}/>
-        <Page pageNumber={2}/>
-      </Document>
+        <Document file={'/CV Sean Grobicki.pdf'} className={styles.document}>
+          <Page pageNumber={1}/>
+          <Page pageNumber={2}/>
+        </Document>
       <footer className={global.footer}>
           <h3 className={global.footerTitle}>Contact Me</h3>
             <p className={global.footerEmail}>Email: seangrobicki@gmail.com </p>

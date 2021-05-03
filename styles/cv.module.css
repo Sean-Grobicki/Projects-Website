@@ -1,6 +1,8 @@
 .document
 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-self: center;
+    margin: 2%;
+    border:solid 2px #afafaf;
 }
