@@ -58,7 +58,6 @@ export default function Home() {
         <article className ={styles.about}>
                 <h3 className={styles.h3}>About Me</h3>
                 <p className={styles.aboutText}>Full Name: Sean Grobicki </p>
-                <p className={styles.aboutText}>DOB: 18/02/2000 </p>
                 <p className={styles.aboutText}>Nationality: British </p>
                 <p className={styles.aboutText}>Place of Study: <a href = "https://www2.mmu.ac.uk/" title="Home Page of Manchester Metropolitan University" >Manchester Metropolitan University</a> </p>
                 <p className={styles.aboutText}>Email: seangrobicki@gmail.com</p>
