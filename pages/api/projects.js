@@ -1,4 +1,6 @@
-import client from '../dbClient.js';
+const { MongoClient } = require("mongodb");
+const uri = encodeURI(process.env.MONGODB_URI);
+const client = new MongoClient(uri,{ useUnifiedTopology: true}, { useNewUrlParser: true },{ connectTimeoutMS: 10000 }, { keepAlive: 1});
 
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 export default async(req, res) => {
