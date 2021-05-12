@@ -1,5 +1,4 @@
-import { urlObjectKeys } from 'next/dist/next-server/lib/utils';
-import client from '../dbClient';
+import client from '../dbClient.js';
 
 export default async(req, res) => {
 

@@ -1,4 +1,4 @@
-import client from '../../dbClient';
+import client from '../../dbClient.js';
 
 export default async(req, res) => {
 
