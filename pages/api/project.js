@@ -22,11 +22,14 @@ export default async(req, res) => {
       }
       else
       {
+        console.log("Not Valid");
         res.status(400).send("Bad Request");
       }
-      
     }
-    
+    else
+    {
+      res.status(403).send("Invalid request type");
+    }
 }
 
 
@@ -39,11 +42,11 @@ function checkValid(body)
   const undefCheckProj = body.title !== undefined && body.type !== undefined && body.language !== undefined && body.description !== undefined;
   const nullCheckProj = body.title !== null && body.type !== null && body.language !== null && body.description !== null;
   var linksCheck = [];
-  if(body.links != undefined)
+  if(body.links !== undefined)
   {
     body.links.forEach((link) => {
-      const undefCheckLink = link.name !==  undefined && link.type !== undefined && link.url !== undefined;
-      const nullCheckLink = link.name !== null && link.type !== null && link.url !== null;
+      const undefCheckLink = link.linkName !==  undefined && link.linkType !== undefined && link.url !== undefined;
+      const nullCheckLink = link.linkName !== null && link.linkType !== null && link.url !== null;
       linksCheck.push(undefCheckLink && nullCheckLink);
     })
   }
@@ -87,6 +90,7 @@ async function addIDs(body)
     body.links.forEach((link) => {
       link.linkID = linkID;
       link.projectID = projectID;
+      linkID += 1;
     });
     return body;
   }
@@ -113,7 +117,7 @@ async function addProject(body)
     
     var linkList = body.links;
     var project = body;
-    project.links = null;
+    delete project.links;
     const result = await projects.insertOne(project);
     const options = {ordered: true}
     const linkResult = await links.insertMany(linkList,options);

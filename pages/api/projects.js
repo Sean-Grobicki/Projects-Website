@@ -17,20 +17,10 @@ export default async(req, res) => {
     const projects = await getProjects(queryParams,number,offset);
     res.status(200).json(projects);
   }
-}
-
-function formatQuery(queryParams)
-{
-  var query = {};
-  if(queryParams.type !== undefined)
+  else
   {
-    query.type = queryParams.type;
+    res.status(403).send("Invalid request type");
   }
-  if(queryParams.lan !== undefined)
-  {
-    query.language = queryParams.lan;
-  }
-  return query;
 }
 
 
