@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "canvas": "^2.7.0",
+    "fs": "0.0.1-security",
     "mongodb": "^3.6.6",
     "next": "10.2.0",
     "react": "17.0.2",
