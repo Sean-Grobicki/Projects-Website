@@ -17,6 +17,7 @@
     "react-dropdown": "^1.9.2",
     "react-pdf": "^5.2.0",
     "react-slideshow-image": "^3.4.6",
-    "swr": "^0.5.5"
+    "swr": "^0.5.5",
+    "webpack": "^4.0.0"
   }
 }
