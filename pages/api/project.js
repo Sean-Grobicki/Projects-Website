@@ -35,30 +35,32 @@ export default async(req, res) => {
 
 function checkValid(body)
 {
-  if(body === undefined || body === null)
-  {
-    return false;
-  }
-  const undefCheckProj = body.title !== undefined && body.type !== undefined && body.language !== undefined && body.description !== undefined;
-  const nullCheckProj = body.title !== null && body.type !== null && body.language !== null && body.description !== null;
-  var linksCheck = [];
-  if(body.links !== undefined)
-  {
-    body.links.forEach((link) => {
-      const undefCheckLink = link.linkName !==  undefined && link.linkType !== undefined && link.url !== undefined;
-      const nullCheckLink = link.linkName !== null && link.linkType !== null && link.url !== null;
-      linksCheck.push(undefCheckLink && nullCheckLink);
-    })
-  }
-  else
-  {
-    return false;
-  }
-  if(linksCheck.includes(false))
-  {
-    return false;
-  }
-  return undefCheckProj && nullCheckProj;
+  const Validator = require('jsonschema').Validator;
+  var v = new Validator();
+  var schema = {
+    "type": "object",
+    "required": ["title","type","language","description"],
+    "properties": {
+      "title": {"type": "string",},
+      "type": {"type": "string"},
+      "language": {"type": "string"},
+      "description": {"type": "string"},
+      "links": {
+        "type": "array",
+        "items": {
+          "properties":{
+            "linkName": {"type": "string"},
+            "linkType": {"type": "string"},
+            "url": {"type": "string"}
+          },
+          "required": ["linkName","linkType","url"],
+          }
+        }
+      },
+    "additionalProperties": false
+  };
+  const result = v.validate(body,schema,{required: true});
+  return result.valid;
 }
 
 async function addIDs(body)
