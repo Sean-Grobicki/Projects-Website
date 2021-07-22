@@ -40,7 +40,6 @@ function checkValid(body)
     "type": "object",
     "required": ["title","type","language","description"],
     "properties": {
-      "Id": {"type": "int"},
       "title": {"type": "string",},
       "type": {"type": "string"},
       "language": {"type": "string"},
@@ -89,11 +88,14 @@ async function addIDs(body)
     linkID = link.linkID + 1;
 
     body.projectID = projectID;
-    body.links.forEach((link) => {
-      link.linkID = linkID;
-      link.projectID = projectID;
-      linkID += 1;
-    });
+    if(body.links != [])
+    {
+      body.links.forEach((link) => {
+        link.linkID = linkID;
+        link.projectID = projectID;
+        linkID += 1;
+      });
+    }
     return body;
   }
   catch(err)
