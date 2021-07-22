@@ -114,6 +114,7 @@ addProject().catch(console.dir);
 
 async function addProject(body) 
 {
+  // Same again here as there is no checks on links
   try {
     await client.connect();
     const database = client.db('projects');
@@ -125,6 +126,10 @@ async function addProject(body)
     var project = body;
     delete project.links;
     const result = await projects.insertOne(project);
+    if (linkList.length == 0)
+    {
+      return result.insertedId != -1;
+    }
     const options = {ordered: true}
     const linkResult = await links.insertMany(linkList,options);
     if(result.insertedId != -1 &&  linkResult.insertedCount === linkList.length)

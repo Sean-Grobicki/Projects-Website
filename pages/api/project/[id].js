@@ -201,6 +201,7 @@ async function update(id,body)
 
 async function remove(id) 
 {
+  // It didn't successfully remove all the links because there were none.
   try {
     await client.connect();
     const database = client.db('projects');
@@ -209,7 +210,7 @@ async function remove(id)
     const query = { projectID: parseInt(id) };
     const project = await projects.deleteOne(query);
     const link = await links.deleteMany(query);
-    return project.deletedCount != 0 && link.deletedCount != 0;
+    return project.deletedCount != 0;
   }
   catch(err)
   {
