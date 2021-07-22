@@ -22,7 +22,6 @@ export default async(req, res) => {
       }
       else
       {
-        console.log("Not Valid");
         res.status(400).send("Bad Request");
       }
     }
@@ -41,6 +40,7 @@ function checkValid(body)
     "type": "object",
     "required": ["title","type","language","description"],
     "properties": {
+      "Id": {"type": "int"},
       "title": {"type": "string",},
       "type": {"type": "string"},
       "language": {"type": "string"},
