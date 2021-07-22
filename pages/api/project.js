@@ -11,13 +11,14 @@ export default async(req, res) => {
       {
         body = await addIDs(body);
         const created = await addProject(body);
+        console.log(created);
         if(created)
         {
           res.status(201).send("Created");
         }
         else
         {
-          res.status(500).send("Unable to add project");
+          res.status(400).send("Unable to add project");
         }
       }
       else
@@ -40,6 +41,7 @@ function checkValid(body)
     "type": "object",
     "required": ["title","type","language","description"],
     "properties": {
+      "projectId": {"type": "integer"},
       "title": {"type": "string",},
       "type": {"type": "string"},
       "language": {"type": "string"},
