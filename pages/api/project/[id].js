@@ -20,7 +20,7 @@ export default async(req, res) => {
       }
       
     }
-    else if(req.method === 'UPDATE')
+    else if(req.method === 'PUT')
     {
       const id = req.query.id;
       const body = req.body;
