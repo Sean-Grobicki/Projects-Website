@@ -11,7 +11,6 @@ export default async(req, res) => {
       {
         body = await addIDs(body);
         const created = await addProject(body);
-        console.log(created);
         if(created)
         {
           res.status(201).send("Created");
@@ -55,7 +54,7 @@ function checkValid(body)
             "type": {"type": "string"},
             "url": {"type": "string"}
           },
-          "required": ["linkName","linkType","url"],
+          "required": ["name","type","url"],
           }
         }
       },
