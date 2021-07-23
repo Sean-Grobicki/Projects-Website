@@ -201,7 +201,7 @@ async function remove(id)
     const query = { projectID: parseInt(id) };
     const project = await projects.deleteOne(query);
     const link = await links.deleteMany(query);
-    return project.deletedCount != 0;
+    return project.result && link.result;
   }
   catch(err)
   {

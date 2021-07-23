@@ -179,6 +179,7 @@ export default function Projects()
 
 function Project(props)
 {
+  console.log(props.project);
    return(
    <div className={styles.projectDiv}> 
      <h3> {props.project.title}</h3>
