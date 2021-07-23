@@ -41,7 +41,7 @@ function checkValid(body)
     "type": "object",
     "required": ["title","type","language","description"],
     "properties": {
-      "projectId": {"type": "integer"},
+      "projectID": {"type": "integer"},
       "title": {"type": "string",},
       "type": {"type": "string"},
       "language": {"type": "string"},

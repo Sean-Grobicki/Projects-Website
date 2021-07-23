@@ -40,8 +40,7 @@ export default async(req, res) => {
       }
       else
       {
-        console.log("ValidateBody False");
-        res.status(400).send("Bad Request");
+        res.status(404).send("Bad Request");
       }
       
     }
@@ -105,7 +104,7 @@ function validateBody(body)
       "type": "object",
       "required": ["title","type","language","description"],
       "properties": {
-        "projectId": {"type": "integer"},
+        "projectID": {"type": "integer"},
         "title": {"type": "string",},
         "type": {"type": "string"},
         "language": {"type": "string"},
@@ -114,6 +113,7 @@ function validateBody(body)
           "type": "array",
           "items": {
             "properties":{
+              "linkID": {"type": "integer"},
               "linkName": {"type": "string"},
               "linkType": {"type": "string"},
               "url": {"type": "string"}
@@ -136,6 +136,7 @@ async function update(id,body)
     const projects = database.collection('project');
     const links = database.collection('link');
     const query = { projectID: parseInt(id) };
+    const linkList = body.links;
     const update = [{ $set: body }];
     const project = await projects.updateOne(query,update);
     const isLinks = body.links != []; 
