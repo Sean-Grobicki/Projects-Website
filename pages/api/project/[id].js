@@ -118,7 +118,7 @@ function validateBody(body)
               "type": {"type": "string"},
               "url": {"type": "string"}
             },
-            "required": ["linkName","linkType","url"],
+            "required": ["name","type","url"],
             }
           }
         },
