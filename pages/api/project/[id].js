@@ -137,6 +137,7 @@ async function update(id,body)
     const links = database.collection('link');
     const query = { projectID: parseInt(id) };
     const linkList = body.links;
+    delete body.links;
     const update = [{ $set: body }];
     const project = await projects.updateOne(query,update);
     const isLinks = body.links != []; 
