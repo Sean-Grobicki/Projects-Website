@@ -145,12 +145,29 @@ async function update(id,body)
       var linkChanged = [];
       var linkIDs = [];
       linkList.forEach(async(link) => {
-        const query = {linkID: parseInt(link.linkID), projectID: parseInt(id)};
-        linkIDs.push(link.linkID);
-        delete link.linkID;
-        const update = [{$set: link}];
-        const l = await links.updateOne(query,update);
-        linkChanged.push(l.result);
+        const linkID = link.linkID;
+        if(linkID == 0)
+        {
+          link.projectID = id;
+          // need to give the link an id
+          const linkOptions = {
+            sort: {linkID: -1},
+            projection: {linkID: 1},
+          }
+          const linkWithID = await links.findOne({},linkOptions);
+          link.linkID = linkWithID.linkID + 1;
+          const inserted = await links.insertOne(link);
+          linkChanged.push(inserted.result);
+        }
+        else
+        {
+          const query = {linkID: parseInt(linkID), projectID: parseInt(id)};
+          linkIDs.push(linkID);
+          delete link.linkID;
+          const update = [{$set: link}];
+          const l = await links.updateOne(query,update);
+          linkChanged.push(l.result);
+        }
       })
       // Delete all links with Ids not in the body.
       const query = {linkID: {$nin: linkIDs},projectID: parseInt(id)};
