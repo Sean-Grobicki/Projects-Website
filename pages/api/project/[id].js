@@ -20,7 +20,7 @@ export default async(req, res) => {
       }
       
     }
-    else if(req.method === 'PATCH')
+    else if(req.method === 'UPDATE')
     {
       const id = req.query.id;
       const body = req.body;
@@ -34,7 +34,6 @@ export default async(req, res) => {
         }
         else
         {
-          console.log("update False");
           res.status(400).send("Bad Request");
         }
         
@@ -103,39 +102,28 @@ function validateBody(body)
   const Validator = require('jsonschema').Validator;
   var v = new Validator();
   var schema = {
-    "type": "object",
-    "anyOf": [
-      {"required": ["title"]},
-      {"required": ["type"]},
-      {"required": ["language"]},
-      {"required": ["description"]},
-      {"required": ["links"]},
-    ],
-    "properties": {
-      "title": {"type": "string",},
-      "type": {"type": "string"},
-      "language": {"type": "string"},
-      "description": {"type": "string"},
-      "links": {
-        "type": "array",
-        "items": {
-          "properties":{
-            "linkID": {"type": "number"},
-            "linkName": {"type": "string"},
-            "linkType": {"type": "string"},
-            "url": {"type": "string"}
-          },
-          "required": ["linkID"],
-          "anyOf": [
-            {"required": ["linkName"]},
-            {"required": ["linkType"]},
-            {"required": ["url"]}
-          ]
+      "type": "object",
+      "required": ["title","type","language","description"],
+      "properties": {
+        "projectId": {"type": "integer"},
+        "title": {"type": "string",},
+        "type": {"type": "string"},
+        "language": {"type": "string"},
+        "description": {"type": "string"},
+        "links": {
+          "type": "array",
+          "items": {
+            "properties":{
+              "linkName": {"type": "string"},
+              "linkType": {"type": "string"},
+              "url": {"type": "string"}
+            },
+            "required": ["linkName","linkType","url"],
+            }
           }
-        }
-      },
-    "additionalProperties": false
-  };
+        },
+      "additionalProperties": false
+    };
   const result = v.validate(body,schema,{required: true});
   return result;
 }
@@ -148,46 +136,32 @@ async function update(id,body)
     const projects = database.collection('project');
     const links = database.collection('link');
     const query = { projectID: parseInt(id) };
-    const isLink = body.links !== null && body.links !== undefined;
-    var linkList = [];
-    var project;
-    if(isLink)
-    {
-      linkList = body.links;
-      delete body.links;
-    }
-    const onlyLink = isLink && Object.keys(body).length === 0;
-    if(!onlyLink)
-    {
-      const update = [{ $set: body }];
-      project = await projects.updateOne(query,update);
-    }
-    if(isLink)
+    const update = [{ $set: body }];
+    const project = await projects.updateOne(query,update);
+    const isLinks = body.links != []; 
+    if(isLinks)
     {
       var linkChanged = [];
+      var linkIDs = [];
       linkList.forEach(async(link) => {
         const query = {linkID: parseInt(link.linkID), projectID: parseInt(id)};
+        linkIDs.push(link.linkID);
         delete link.linkID;
         const update = [{$set: link}];
         const l = await links.updateOne(query,update);
         linkChanged.push(l.upsertedCount);
       })
+      // Delete all links with Ids not in the body.
+      const query = {linkID: {$nin: linkIDs},projectID: parseInt(id)};
+      const dl = await links.deleteMany(query);
       const notUpdate = linkChanged.includes(0) || linkChanged === [];
-      if(onlyLink)
-      {
-        return !notUpdate;
-      }
-      else
-      {
-        return project.result && !notUpdate;
-      }
+      return project.result && !notUpdate;
     }
     else
     {
       console.log("No Links")
       return project.result;
     }
-    
   }
   catch(err)
   {
