@@ -150,17 +150,15 @@ async function update(id,body)
         delete link.linkID;
         const update = [{$set: link}];
         const l = await links.updateOne(query,update);
-        linkChanged.push(l.upsertedCount);
+        linkChanged.push(l.result);
       })
       // Delete all links with Ids not in the body.
       const query = {linkID: {$nin: linkIDs},projectID: parseInt(id)};
       const dl = await links.deleteMany(query);
-      const notUpdate = linkChanged.includes(0) || linkChanged === [];
-      return project.result && !notUpdate;
+      return project.result && linkChanged && dl.result;
     }
     else
     {
-      console.log("No Links")
       return project.result;
     }
   }
