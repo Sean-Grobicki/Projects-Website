@@ -149,7 +149,7 @@ async function update(id,body)
         const linkID = link.linkID;
         if(linkID == 0)
         {
-          link.projectID = id;
+          link.projectID = parseInt(id);
           // need to give the link an id
           const linkOptions = {
             sort: {linkID: -1},
