@@ -50,6 +50,7 @@ function checkValid(body)
         "type": "array",
         "items": {
           "properties":{
+            "linkID": {"type": "integer"},
             "linkName": {"type": "string"},
             "linkType": {"type": "string"},
             "url": {"type": "string"}
