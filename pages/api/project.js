@@ -51,8 +51,8 @@ function checkValid(body)
         "items": {
           "properties":{
             "linkID": {"type": "integer"},
-            "linkName": {"type": "string"},
-            "linkType": {"type": "string"},
+            "name": {"type": "string"},
+            "type": {"type": "string"},
             "url": {"type": "string"}
           },
           "required": ["linkName","linkType","url"],
