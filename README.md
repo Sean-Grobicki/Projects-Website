@@ -1,2 +1,2 @@
-#Portfolio Website
+# Portfolio Website
 This website was developed to help display my programming projects to employers. It is developed using Next.js which is a react framework and has an API built into it so the information can be changed easily using the [Database Manager](https://github.com/Sean-Grobicki/Database-Manager). During the course of this project I developed my react frontend skills as well as gained more practice creating API's in JavaScript.
